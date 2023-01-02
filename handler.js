@@ -1314,7 +1314,7 @@ export async function participantsUpdate({ id, participants, action }) {
     let welran = [wela, welb, welc, weld].getRandom()
     let byeran = [byea, byeb].getRandom()
     
-      let pilih = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8", "ke9"].getRandom()
+      let pilih = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8"].getRandom()
 if (pilih == "ke1") {
 	await conn.send2ButtonDoc(id, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
 }
@@ -1357,21 +1357,6 @@ if (pilih == "ke8") {
 		url: global.giflogo
 	}, btn, action == 'add' ? welran : byeran)
 }
-if (pilih == "ke9") {
-        await conn.sendButton(id, text, action == 'add' ? wmwel : wmlea, Buffer.alloc(0), [[action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu'], [action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu']], null, { quoted: fakes, mimetype: mim_.getRandom(), fileName: ucapan, pageCount: fpagedoc, fileLength: fsizedoc, seconds: fsizedoc, jpegThumbnail: await conn.resize(logo, 300, 150), contextInfo: {
-    mentionedJid: [user],
-          externalAdReply :{
-          showAdAttribution: true,
-    mediaUrl: lin_.getRandom(),
-    mediaType: 2,
-    description: wm, 
-    title: '👋 Hai, ' + names + ' ' + ucapan,
-    body: botdate,
-    thumbnail: await( await fetch(action == 'add' ? welran : byeran)).buffer(),
-    sourceUrl: sgc
-     }}
-  })
-  }
                     }
                 }
             }
