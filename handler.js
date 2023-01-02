@@ -1286,8 +1286,6 @@ export async function participantsUpdate({ id, participants, action }) {
   let gettext = await fetch('https://raw.githubusercontent.com/fawwaz37/random/main/bijak.txt')
   let restext = await gettext.text()
   let katarandom = restext.split('\n')
-  let resmoji = JSON.parse(readFileSync('./json/emoji.json'))
-  let emojis = resmoji.emoji
   let mim_ = ["application/vnd.openxmlformats-officedocument.presentationml.presentation","application/vnd.openxmlformats-officedocument.spreadsheetml.sheet","application/vnd.openxmlformats-officedocument.wordprocessingml.document","application/vnd.ms-excel","application/msword","application/pdf","text/rtf"]
   let lin_ = ["https://www.youtube.com","https://www.tiktok.com","https://www.instagram.com","https://www.facebook.com"]
   let wmwel = `\n\n📮 *Welcome:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner`
@@ -1318,25 +1316,25 @@ export async function participantsUpdate({ id, participants, action }) {
     
       let pilih = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8", "ke9"].getRandom()
 if (pilih == "ke1") {
-	await conn.send2ButtonDoc(id, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis.getRandom() + ' Menu List' : emojis.getRandom() + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
+	await conn.send2ButtonDoc(id, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke2") {
-	await conn.send2ButtonLoc(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis.getRandom() + ' Menu List' : emojis.getRandom() + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
+	await conn.send2ButtonLoc(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke3") {
-	await conn.send2ButtonImg(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis.getRandom() + ' Menu List' : emojis.getRandom() + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
+	await conn.send2ButtonImg(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke4") {
-	await conn.send2ButtonVid(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis.getRandom() + ' Menu List' : emojis.getRandom() + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
+	await conn.send2ButtonVid(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke5") {
-	await conn.sendTemplateButtonDoc(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', fakes, fakefb)
+	await conn.sendTemplateButtonDoc(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke6") {
-	await conn.sendTemplateButtonLoc(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', fakes, fakefb)
+	await conn.sendTemplateButtonLoc(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke7") {
-	await conn.send2TemplateButtonFakeImg(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis.getRandom() + ' Menu List' : emojis.getRandom() + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
+	await conn.send2TemplateButtonFakeImg(id, action == 'add' ? welran : byeran, text, action == 'add' ? wmwel : wmlea, action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu', action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu', fakes, fakefb)
 }
 if (pilih == "ke8") {
 	let btn = [{
@@ -1346,12 +1344,12 @@ if (pilih == "ke8") {
 		}
 	}, {
 		quickReplyButton: {
-			displayText: emojis.getRandom() + ' All Menu',
+			displayText: emojis + ' All Menu',
 			id: '/allmenu'
 		}
 	}, {
 		quickReplyButton: {
-			displayText: emojis.getRandom() + ' List Menu',
+			displayText: emojis + ' List Menu',
 			id: '/menulist'
 		}
 	}]
@@ -1360,7 +1358,7 @@ if (pilih == "ke8") {
 	}, btn, action == 'add' ? welran : byeran)
 }
 if (pilih == "ke9") {
-        await conn.sendButton(id, text, action == 'add' ? wmwel : wmlea, Buffer.alloc(0), [[action == 'add' ? emojis.getRandom() + ' Selamat Datang' : emojis.getRandom() + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu'], [action == 'add' ? emojis.getRandom() + ' Menu List' : emojis.getRandom() + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu']], null, { quoted: fakes, mimetype: mim_.getRandom(), fileName: ucapan, pageCount: fpagedoc, fileLength: fsizedoc, seconds: fsizedoc, jpegThumbnail: await conn.resize(logo, 300, 150), contextInfo: {
+        await conn.sendButton(id, text, action == 'add' ? wmwel : wmlea, Buffer.alloc(0), [[action == 'add' ? emojis + ' Selamat Datang' : emojis + ' Sampai Jumpa', action === 'add' ? 'tes' : 'Huuu'], [action == 'add' ? emojis + ' Menu List' : emojis + ' Byee \n\n' + katarandom.getRandom() + '\n\n', action === 'add' ? '/menulist' : 'Huuu']], null, { quoted: fakes, mimetype: mim_.getRandom(), fileName: ucapan, pageCount: fpagedoc, fileLength: fsizedoc, seconds: fsizedoc, jpegThumbnail: await conn.resize(logo, 300, 150), contextInfo: {
     mentionedJid: [user],
           externalAdReply :{
           showAdAttribution: true,
