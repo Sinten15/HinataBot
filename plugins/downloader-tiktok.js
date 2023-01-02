@@ -3,9 +3,13 @@ import axios from 'axios'
 
 let handler = async (m, { conn, usedPrefix, command, text, args }) => {
 if (!args[0]) throw 'Masukkan Link'
-let gw = await fetch('https://malesin.xyz/tiktok?url=' + args[0])
-        let males = await gw.json()
-        conn.send2ButtonVid(m.chat, males.video, males.title, males.author, `Wm`, `.get ${males.videoWM}`, `Audio`, `.get ${males.audio}`, fakes, adReply)
+        let cer = await ngetiktok(text)
+	let cap = `*「 T I K T O K 」*
+*📛Author:* ${cer.author}
+*📒Title:* ${cer.desc}
+
+`.trim()
+conn.send2ButtonVid(m.chat, cer.watermark, cap, author, 'No Wm', `.get ${cer.nowm}`, 'Audio', `.get ${cer.audio}`, m, adReply)
 }
 handler.help = ['tiktok'].map(v => v + ' <url>')
 handler.tags = ['downloader']
@@ -14,39 +18,17 @@ handler.command = /^(tiktok)$/i
 
 export default handler
 
-/*
-import fetch from 'node-fetch'
-import axios from 'axios'
-import { tiktok } from "social_media_downloader"
-let handler = async (m, { conn, usedPrefix, command, text, args }) => {
-if (!args[0]) throw 'Masukkan Link'
-try {
-let p = await tiktok(args[0])
-    if (!p.link) throw 'Can\'t download video!'
-    let cap = `*「 T I K T O K 」*
-                 ████████▀▀▀████
-                 ████████────▀██
-                 ████████──█▄──█
-                 ███▀▀▀██──█████
-                 █▀──▄▄██──█████
-                 █──█████──█████
-                 █▄──▀▀▀──▄█████
-                 ███▄▄▄▄▄███████
-──────────────────────────
-
-*📛Nickname:* ${p.dev}
-*📒Description:* ${p.description}
-*Url:* ${p.url}
-`.trim()
-conn.send2ButtonVid(m.chat, p.link, cap, author, `No Wm`, `.tiktoknowm ${args[0]}`, `Audio`, `.tiktokaudio ${args[0]}`, fakes, adReply)
-} catch (e) {
-    throw eror
-    }
+async function ngetiktok(query) {
+  let response = await axios("https://lovetik.com/api/ajax/search", {
+    method: "POST",
+    data: new URLSearchParams(Object.entries({ query })),
+  });
+  
+   let desc = response.data.desc
+   let author = response.data.author
+   let nowm = (response.data.links[0].a || "").replace("https", "http")
+   let watermark = (response.data.links[1].a || "").replace("https", "http")
+   let audio = (response.data.links[2].a || "").replace("https", "http")
+   let thumbnail = response.data.cover
+  return { desc, author, nowm, watermark, audio, thumbnail }
 }
-handler.help = ['tiktok'].map(v => v + ' <url>')
-handler.tags = ['downloader']
-
-handler.command = /^t(iktok(d(own(load(er)?)?|l))?|td(own(load(er)?)?|l))$/i
-
-export default handler
-*/

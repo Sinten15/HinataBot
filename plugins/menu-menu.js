@@ -88,7 +88,6 @@ if (pilih == "ke8") {
 		url: global.giflogo
 	}, btn, knimg)
 }
-}
 // Sound
 await conn.sendFile(m.chat, 'https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/bot.mp3', '', '', m)
 
