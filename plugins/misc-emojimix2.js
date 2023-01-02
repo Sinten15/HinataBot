@@ -2,7 +2,7 @@ import fetch from 'node-fetch'
 import { Sticker } from 'wa-sticker-formatter'
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
-	let [emoji1, emoji2] = text.split`+`
+	let [emoji1, emoji2] = text.split(/[xzXZ/i!#\$%\+£¢€¥\^°=¶∆×÷π√✓©®:;\?&\.\\\-]+/)
 	if (emoji1 && emoji2) {
 		let url = API('violetics', '/api/media/emojimix', { emoji1, emoji2 }, 'apikey')
 		let res = await fetch(url)

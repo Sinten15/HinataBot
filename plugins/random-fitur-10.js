@@ -4,7 +4,6 @@ import nhentai from 'nhentai-node-api'
 let handler = async(m, { conn, groupMetadata, usedPrefix, text, args, command }) => {
 
 // Fake 🤥
-let frep = { contextInfo: { externalAdReply: {title: global.wm, body: global.author, sourceUrl: snh, thumbnail: fs.readFileSync('./thumbnail.jpg')}}}
 let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
 let pp = await conn.profilePictureUrl(who).catch(_ => hoppai.getRandom())
 let name = await conn.getName(who)
@@ -125,11 +124,14 @@ await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
 if (args[0] == 'kitsune') {
 await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
 }
+try {
 await conn.sendFile(m.chat, x.results[0].url, 'out.gif', m, false, { mimetype: 'image/gif', thumbnail: Buffer.alloc(0) })
-await conn.sendButton(m.chat, `*Silahkan pilih di bawah:*
-  ${args[0]}`, wm, null, [
-                ['Next Picture', `${usedPrefix + command} ${args[0]}`]
-            ], fakes, adReply)
+} catch {
+await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
+}
+await conn.sendButton(m.chat, 'Next', wm, null, [
+                ['Next', `${usedPrefix + command} ${args[0]}`]
+            ], m)
 }
 
 if (command == 'avatar') {
@@ -296,9 +298,9 @@ if (command == 'tafsirsurahx') {
 		
 if (command == 'karakter') {
   if (!text) throw `Masukkan query!`
-  let res = await fetch(`https://api.jikan.moe/v3/search/character?q=${text}`)
+  let res = await fetch(`https://api.jikan.moe/v4/anime?q=${text}`)
   let json = await res.json()
-  let kar = json.results
+  let kar = json.data
   let row = Object.values(kar).map((v, index) => ({
 		title: ++index + dmenub + ' ' + v.name,
 		description: '\n*ID* ' + v.mal_id + '\n💭 *Nickname* ' + v.alternative_names + '\n🔗 *Link* ' + v.url + '\n👤 *Character Type* ' + Object.values(v.manga).map(v => v.type) + '\n👤 *name* ' + Object.values(v.manga).map(v => v.name) + '\n👤 *mal_id* ' + Object.values(v.manga).map(v => v.mal_id) + '\n👤 *url* ' + Object.values(v.manga).map(v => v.url) + '\n*Image* ' + v.image_url,
@@ -314,7 +316,7 @@ if (command == 'karakter') {
 
 if (command == 'nhentais') {
   if (!text) throw `Masukkan query!`
-  
+  try {
   let res = await nhentai.search(text, 'popular-week', 1)
   let row = Object.values(res).map((v, index) => ({
 		title: '💬 ' + v.title,
@@ -327,7 +329,9 @@ if (command == 'nhentais') {
 		footerText: wm
 	}
 	return await conn.sendListM(m.chat, button, row, m)
-	
+	} catch {
+	throw eror
+	}
 }
 
 }

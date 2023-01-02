@@ -3,6 +3,7 @@ import fetch from 'node-fetch'
 import cheerio from 'cheerio'
 
 let handler = async (m, { conn, args, usedPrefix, text, command }) => {
+if (!text) throw 'Input Text'
 let sp = text.split`|`
 	let no = sp[0]
 	let tems = sp[1]
