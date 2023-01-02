@@ -73,9 +73,7 @@ const listMessage = {
   user.registered = true
   let sn = createHash('md5').update(m.sender).digest('hex')
   let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender
-  let cap = `*${htki} ᴜsᴇʀs ${htki}*
-
-${dmenut} 
+  let cap = `*${htki} ᴜsᴇʀs ${htka}*
 ${dmenub} *sᴛᴀᴛᴜs:* ☑️ sᴜᴄᴄᴇssғᴜʟ
 ${dmenub} *ɴᴀᴍᴇ:* ${name}
 ${dmenub} *ᴀɢᴇ:* ${age} ʏᴇᴀʀs

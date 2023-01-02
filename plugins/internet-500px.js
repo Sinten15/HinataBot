@@ -22,7 +22,7 @@ export default handler
 /* New Line */
 async function fetchData(username = '') {
     if (!username) return []
-    const response = await fetch(`https://500px.com/${username}/rss`);
+    const response = await fetch('https://500px.com/' + username + '/rss');
     let datas = await response.text();
     let data = datas.replace(/\t/g, '');
     const items = data.split('<item>');

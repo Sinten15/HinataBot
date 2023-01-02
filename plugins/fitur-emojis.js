@@ -2,7 +2,6 @@ import { Emoji } from 'emoji-api'
 let emoji = Emoji
 let handler = async (m, { conn, args, text, usedPrefix, command, isPrems }) => {
 let name = await conn.getName(m.sender)
-throw 'Wait'
 const sections = [
    {
 	title: `${htki} List Options ${htka}`,
@@ -10,7 +9,7 @@ const sections = [
 	{title: `${htjava} API`, rowId: `${usedPrefix + command} ${args[0]} a`},
 	{title: `${htjava} MODULE`, rowId: `${usedPrefix + command} ${args[0]} m`}
 	]
-    },
+    }
 ]
 
 const listMessage = {
@@ -20,11 +19,11 @@ const listMessage = {
   buttonText: "Click Here!",
   sections
 }
-if (!args[0] || !args[1]) return conn.sendMessage(m.chat, listMessage, { quoted: fakes })
+if (!args[0]) return conn.sendMessage(m.chat, listMessage, { quoted: fakes })
 
 if (args[1] == 'm') {
-throw 'Wait'
-let mmo = await emoji.get(`${args[0]}`)
+throw 'Module Wait'
+let mmo = await emoji.get(encodeURIComponent(args[0]))
 let emom = mmo.images
 	let row = Object.values(emom).map((v, index) => ({
 		title: v.index + ' Emoji Api ' + v.vendor,
@@ -39,7 +38,7 @@ let emom = mmo.images
 	return conn.sendListM(m.chat, button, row, m)
 	}
 if (args[1] == 'a') {
-throw 'Wait'
+throw 'Api Wait'
   let amo = ["apple",
 "facebook",
 "google",
@@ -51,7 +50,7 @@ throw 'Wait'
 	let row = Object.keys(amo).map((v, index) => ({
 		title: '📌 Emoji ' + amo[v],
 		description: '\nBy: ' + wm,
-		rowId: usedPrefix + 'fetchsticker ' + 'https://botcahx-rest-api.herokuapp.com/api/emoji/' + amo[v] + '?emoji=' + args[0] + ' wsf'
+		rowId: usedPrefix + 'fetchsticker ' + 'https://botcahx-rest-api.herokuapp.com/api/emoji/' + amo[v] + '?emoji=' + encodeURIComponent(args[0]) + ' wsf'
 	}))
 	let button = {
 		buttonText: `☂️ ${command} Search Disini ☂️`,

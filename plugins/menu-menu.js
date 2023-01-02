@@ -44,7 +44,7 @@ let pp = await conn.profilePictureUrl(who).catch(_ => hwaifu.getRandom())
 ${cmenua}`
 
 let weem = `📮 *Note:* Jika menemukan bug, error atau kesulitan dalam penggunaan silahkan laporkan/tanyakan kepada Owner`
-    let pusat = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8", "ke9"]
+    let pusat = ["ke1", "ke2", "ke3", "ke4", "ke5", "ke6", "ke7", "ke8"]
 let pilih = pusat.getRandom()
 if (pilih == "ke1") {
 	await conn.send2ButtonDoc(m.chat, cap, weem, emojis + ' All Menu', usedPrefix + 'allmenu', emojis + ' List Menu', usedPrefix + 'menulist', fakes, fakefb)
@@ -88,19 +88,6 @@ if (pilih == "ke8") {
 		url: global.giflogo
 	}, btn, knimg)
 }
-if (pilih == "ke9") {
-	await conn.sendButton(m.chat, cap, weem, Buffer.alloc(0), [[emojis + ' All Menu', usedPrefix + 'allmenu'], [emojis + ' List Menu', usedPrefix + 'menulist']], m, { mimetype: mim_.getRandom(), fileName: ucapan, pageCount: fpagedoc, fileLength: fsizedoc, seconds: fsizedoc, jpegThumbnail: await( await fetch(thumbnailUrl.getRandom())).buffer(), contextInfo: {
-          externalAdReply :{
-          showAdAttribution: true,
-    mediaUrl: lin_.getRandom(),
-    mediaType: 2,
-    description: wm, 
-    title: '👋 Hai, ' + name + ' ' + ucapan,
-    body: botdate,
-    thumbnail: knimg,
-    sourceUrl: sgc
-     }}
-  })
 }
 // Sound
 await conn.sendFile(m.chat, 'https://raw.githubusercontent.com/saipulanuar/Api-Github/main/audio/bot.mp3', '', '', m)

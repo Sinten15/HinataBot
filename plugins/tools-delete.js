@@ -1,13 +1,10 @@
-let handler = async (m, { conn, command }) => {
+let handler = async (m, { conn, command, isBotAdmin }) => {
 if (!m.quoted) throw 'Reply pesan yang ingin dihapus'
 
-try {
 let hapus = m.quoted.sender ? m.message.extendedTextMessage.contextInfo.participant : m.key.participant
 let bang = m.quoted.id ? m.message.extendedTextMessage.contextInfo.stanzaId : m.key.id
-return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: hapus }})
-} catch (e) {
-return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
-}
+if (isBotAdmin) return conn.sendMessage(m.chat, { delete: { remoteJid: m.chat, fromMe: false, id: bang, participant: hapus }})
+if (!isBotAdmin) return conn.sendMessage(m.chat, { delete: m.quoted.vM.key })
 
 }
 handler.help = ['del', 'delete']
