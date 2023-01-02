@@ -237,19 +237,69 @@ global.adReplyS = {
 		global.htka = "』─┅═❏"
 		
   /* Thumbnail */
-		global.hwaifu = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hbeach = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.thumbnailUrl = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hoppai = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hloli = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hyuri = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hneko = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hLokun = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.hbunny = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.thumbs = ["https://cerdasin.netlify.app/img/thumbnail.jpg"]
-		global.thumb = "https://cerdasin.netlify.app/img/thumbnail.jpg"
-		global.imagebot = "https://cerdasin.netlify.app/img/thumbnail.jpg"
-		global.thumbdoc = "https://cerdasin.netlify.app/img/thumbnail.jpg"
+		global.hwaifu = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hbeach = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.thumbnailUrl = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hoppai = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hloli = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hyuri = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hneko = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hLokun = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.hbunny = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.thumbs = ["https://cerdasin.netlify.app/img/thumbnail.jpg",
+"https://cerdasin.netlify.app/img/thumbnail1.jpg",
+"https://cerdasin.netlify.app/img/thumbnail2.jpg",
+"https://cerdasin.netlify.app/img/thumbnail3.jpg",
+"https://cerdasin.netlify.app/img/thumbnail4.jpg",
+"https://cerdasin.netlify.app/img/thumbnail5.jpg"]
+		global.thumb = "https://cerdasin.netlify.app/img/thumbnail3.jpg"
+		global.imagebot = "https://cerdasin.netlify.app/img/thumbnail2.jpg"
+		global.thumbdoc = "https://cerdasin.netlify.app/img/thumbnail1.jpg"
 		global.logo = "https://cerdasin.netlify.app/img/thumbnail.jpg"
 		
   /* Begin */
@@ -268,7 +318,7 @@ global.adReplyS = {
 				}
 			}
 		}
-		global.knimg = "https://cerdasin.netlify.app/img/thumbnail.jpg"
+		global.knimg = "https://cerdasin.netlify.app/img/thumbnail1.jpg"
 		
 /*Watermark*/
 global.lopr = "🅟"
