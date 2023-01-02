@@ -11,14 +11,11 @@ await conn.sendMessage(m.chat, {
             text: '🗿',
             key: m.key
           }})
-          try {
+          if (!args[0] || args[0].length > 2) throw 'Masukkan emoji tapi 1 aja ya :v'
 let mmo = await emoji.get(args[0]).twemoji()
 const stek = new Sticker(encodeURI(mmo), { pack: packname, author: author, type: StickerTypes.FULL })
 				const buffer = await stek.toBuffer()
 				conn.sendFile(m.chat, buffer, 'sticker.webp', '', fakes, adReply, { asSticker: true })
-				} catch (e) {
-				throw eror
-				}
 }
 handler.help = ['emoji']
 handler.tags = ['sticker'] 

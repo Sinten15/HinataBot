@@ -2,8 +2,8 @@ import fetch from 'node-fetch'
 import axios from 'axios'
 
 let handler = async (m, { conn, usedPrefix, command, text, args }) => {
-if (!args[0]) throw 'Masukkan Link'
-        let cer = await ngetiktok(text)
+if (!text.includes('tiktok')) throw 'Masukkan Link'
+    let cer = await ngetiktok(text)
 	let cap = `*「 T I K T O K 」*
 *📛Author:* ${cer.author}
 *📒Title:* ${cer.desc}

@@ -514,13 +514,30 @@ let row = Object.keys(namop, desop, idop).map((v, index) => ({
       if (!/[01]/.test(command)) return conn.sendListM(m.chat, button, row, fakes)
       throw false
   }
-  
-  conn.send2ButtonDoc(m.chat, `*${htki} OPTIONS ${htka}*
+
+let deslis = `*${htki} OPTIONS ${htka}*
 🗂️ *Type:* ${type} 
 📊 *Status:* Succes ✅
 🎚️ *Options:* ${isEnable ? 'Enable' : 'Disable'}
 📣 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}
-`, author, `${isEnable ? '✖️ Disable' : '✔️ Enable'}`, `${isEnable ? `.off ${type}` : `.on ${type}`}`, '🎀 Menu', '.menu', fakes, adReply)
+`
+let namli = [`${isEnable ? '✖️ Disable' : '✔️ Enable'}`]
+let desli = [`${isEnable ? 'Enable' : 'Disable'}`]
+let idli = [`${isEnable ? `.off ${type}` : `.on ${type}`}`]
+
+let rowli = Object.keys(namli, desli, idli).map((v, index) => ({
+		title: `${htki} ${namli[v]} ${htka}`,
+		description: `\nNo.${1 + index}\n${htjava}${desli[v]}\n${dmenuf}`,
+		rowId: idli[v]
+	}))
+	let buttli = {
+		buttonText: `${isEnable ? '✖️ Disable' : '✔️ Enable'}`,
+		description: deslis,
+		footerText: wm
+	}
+conn.sendListM(m.chat, buttli, rowli, fakes)
+
+
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']

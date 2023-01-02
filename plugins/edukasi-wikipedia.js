@@ -3,10 +3,12 @@ let handler = async (m, { text, usedPrefix, command }) => {
 try {
   if (!text) throw `Contoh penggunaan ${usedPrefix}${command} Minecraft`
   let json = await wikipedia(text)
-  m.reply(`
-*${json.title}*
-_Gambar:_ ${json.img}
+  m.reply(`*JUDUL*
+${json.title}
+*LINK:*
+${json.img}
 
+*Article:*
 ${json.articles}
 `.trim())
 } catch (e) {
