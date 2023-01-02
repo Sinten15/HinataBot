@@ -107,8 +107,5 @@
         "xfarr-api": "^1.0.3",
         "yargs": "*", 
         "zs-extract": "*"
-    },
-    "optionalDependencies": {
-        "wa-sticker-formatter": "*"
     }
 }
