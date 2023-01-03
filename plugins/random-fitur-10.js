@@ -51,28 +51,6 @@ ${usedPrefix + command} catboy
             ], fakes, adReply)
 }
 
-if (command == 'animals') {
-let f = await fetch(`https://zoo-animal-api.herokuapp.com/animals/rand`)
-let x = await f.json()
-await conn.sendButton(m.chat, `*Result:*
-*Name:* ${x.name}
-*Latin:* ${x.latin_name}
-*Type:* ${x.animal_type}
-*Active Time:* ${x.active_time}
-*Length Min.:* ${x.length_min}
-*Length Max.:* ${x.length_max}
-*Weight Min.:* ${x.weight_min}
-*Weight Max.:* ${x.weight_max}
-*Lifespan:* ${x.lifespan}
-*Habitat:* ${x.habitat}
-*Diet:* ${x.diet}
-*Geo:* ${x.geo_range}
-*ID:* ${x.id}
-`, wm, x.image_link, [
-                ['Get Picture', `${usedPrefix}get ${x.image_link}`]
-            ], fakes, adReply)
-}
-
 if (command == 'nekos') {
 if (!args[0]) throw `Contoh:\n${usedPrefix + command} baka
 
@@ -116,22 +94,19 @@ if (!args[0]) throw `Contoh:\n${usedPrefix + command} baka
 let f = await fetch(`https://nekos.best/api/v2/${args[0]}`)
 let x = await f.json()
 if (args[0] == 'neko') {
-await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
+await conn.sendFile(m.chat, x.results[0].url, '', x.results[0].anime_name, m)
 }
 if (args[0] == 'waifu') {
-await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
+await conn.sendFile(m.chat, x.results[0].url, '', x.results[0].anime_name, m)
 }
 if (args[0] == 'kitsune') {
-await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
+await conn.sendFile(m.chat, x.results[0].url, '', x.results[0].anime_name, m)
 }
 try {
-await conn.sendFile(m.chat, x.results[0].url, 'out.gif', m, false, { mimetype: 'image/gif', thumbnail: Buffer.alloc(0) })
-} catch {
-await conn.sendFile(m.chat, x.results[0].url, 'image.png', wm, m)
+await conn.sendFile(m.chat, x.results[0].url, '', x.results[0].anime_name, false, { mimetype: 'image/gif', thumbnail: Buffer.alloc(0) })
+} catch (e) {
+await conn.sendFile(m.chat, x.results[0].url, '', x.results[0].anime_name, m)
 }
-await conn.sendButton(m.chat, 'Next', wm, null, [
-                ['Next', `${usedPrefix + command} ${args[0]}`]
-            ], m)
 }
 
 if (command == 'avatar') {
@@ -335,7 +310,7 @@ if (command == 'nhentais') {
 }
 
 }
-handler.command = handler.help = ['nhentais', 'cqr', 'catboys', 'animals', 'nekos', 'avatar', 'randomuser', 'lmsea', 'iqrax', 'juzammax', 'hadistx', 'alquranx', 'tafsirsurahx', 'karakter']
+handler.command = handler.help = ['nhentais', 'cqr', 'catboys', 'nekos', 'avatar', 'randomuser', 'lmsea', 'iqrax', 'juzammax', 'hadistx', 'alquranx', 'tafsirsurahx', 'karakter']
 handler.tags = ['random']
 
 export default handler
